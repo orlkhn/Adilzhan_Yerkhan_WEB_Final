@@ -1,0 +1,58 @@
+ NIGHTSHFT — SOURCES AND ACKNOWLEDGEMENTS
+WEB Technologies 1 (Front End) — Final, 2026
+
+PROJECT
+NightShift is a student project for choosing and planning evening activities in Astana.
+The 15 places are real venues and landmarks in Astana (Coffee Boom, Okadzaki, Botanical Garden, Presidential Park,
+Prime Game Hub, Chaplin Cinema, Pingwin Bowling, Triathlon Park, Dodo Pizza, Doner na Abaya, Shaurma Food,
+Bauyrdaq, Yamato Cyber Club, Baiterek Square, Samal Park).
+Prices are approximate: some come from public pages (sxodim.com, eurasia.travel); the rest are estimates marked on each card.
+There is no backend, payment integration, or real booking feature. Saved items exist only in the visitor's browser.
+
+TOOLS AND CODE
+HTML, original custom CSS, and JavaScript ES6+ — project-specific implementation.
+Bootstrap CSS v5.3.6 — The Bootstrap Authors, MIT License.
+Official project: https://getbootstrap.com/
+File: css/bootstrap.min.css (licensed third-party framework, not a downloaded page template).
+jQuery v3.6.1 — OpenJS Foundation, MIT License.
+Official project: https://jquery.com/
+File: js/jquery.min.js.
+
+VISUALS
+The original 16 SVG images (nightscape and 15 place illustrations), plus an additional Day-mode landscape, were created specifically
+for this project using custom SVG code, with assistance from OpenAI ChatGPT.
+SVG files: images/*.svg.
+Icons: our own inline SVG set in js/icons.js (no emoji, no icon packs).
+No downloaded website template or UI theme is used.
+
+PRIOR MIDTERM SOURCES
+The earlier Midterm repository contains Unsplash photographs and previously generated images,
+credited in its own CREDITS.txt history. Those old photos are not needed by this standalone version.
+Original repository: https://github.com/Elkanmn/Midterm_AmangaliyevYerkhan_AdilzhanOralkhan
+
+FINAL ADDITIONS
+Light/dark theme (Day shift / Night shift), demo accounts (Sign Up, Log In, Profile, Log Out),
+saved places and plans, toast notifications and the sticky header were written with AI assistance
+from Claude (Anthropic) and then tested and reviewed by the team. Listed on the Credits page of the site too.
+Bootstrap grid, form fields, input groups and form-check are used from Bootstrap 5.3.6.
+
+
+PHOTO ADDITIONS (FINAL REVISION)
+- coffeeboom: Kavig624, “Cafe Interior with Coffee.jpg”, CC0 1.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Cafe_Interior_with_Coffee.jpg
+- okadzaki: Luvpixy, “Japanese Sushi platter.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Japanese_Sushi_platter.jpg
+- botanical: MB-one, “Botanical garden, Astana (P1190700).jpg”, CC BY-SA 4.0; actual place; https://commons.wikimedia.org/wiki/File:Botanical_garden%2C_Astana_(P1190700).jpg
+- bauyrdaq: Armanilo, “Kazakh culture Baursak.jpg”, CC BY 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Kazakh_culture_Baursak.jpg
+- presidential: TóastyTwo, “PresidentialParkAstana.jpg”, CC BY 4.0; actual place; https://commons.wikimedia.org/wiki/File:PresidentialParkAstana.jpg
+- triatlon: Gfrc360, “Astana Triathlon Park View.jpg”, CC BY-SA 4.0; actual place; https://commons.wikimedia.org/wiki/File:Astana_Triathlon_Park_View.jpg
+- baiterek-square: Dauren Nabijan, “Bäiterek tower.jpg”, CC0 1.0; actual place; https://commons.wikimedia.org/wiki/File:B%C3%A4iterek_tower.jpg
+- samal: Nikolamikovic82, “Astana, park.jpg”, CC0 1.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Astana%2C_park.jpg
+- primegame: Sanza29, “LAN-Party.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:LAN-Party.jpg
+- yamato: Stuballew, “LAN Party.jpg”, CC BY-SA 3.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:LAN_Party.jpg
+- chaplin: Adamantios, “Cinema-long-exposure-hdr-0a.jpg”, CC BY-SA 3.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Cinema-long-exposure-hdr-0a.jpg
+- pingwin: Raysonho, “BowlingAlley.jpg”, CC0 1.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:BowlingAlley.jpg
+- dodo: David Adam Kess, “Photography by David Adam Kess, pizza.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Photography_by_David_Adam_Kess%2C_pizza.jpg
+- doner: prufrock27, “Doner Kebab.jpg”, CC BY 2.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Doner_Kebab.jpg
+- shaurma: Vis M, “Shawarma in preparation.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Shawarma_in_preparation.jpg
+- botanical (evening): DiamondMoore, “Flowers at sunset in Botanical Garden Nur-Sultan city.jpg”, CC BY-SA 4.0; actual place; https://commons.wikimedia.org/wiki/File:Flowers_at_sunset_in_Botanical_Garden_Nur-Sultan_city.jpg
+- baiterek-square (evening): Dauren Nabijan, “Baiterek monument at night.jpg”, CC0 1.0; actual place; https://commons.wikimedia.org/wiki/File:Baiterek_monument_at_night.jpg
+Photos are externally loaded from Wikimedia Commons and require Internet. Locally available SVG fallback remains. Specific business photos are representative, not photos of those venues. Photos are cropped in layout; no misleading claim that the representative photos show named businesses.

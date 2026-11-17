@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-label="City park and Baiterek tower in Astana on a sunny day">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a5d6ed"/><stop offset=".62" stop-color="#def5e6"/><stop offset="1" stop-color="#fff2d5"/></linearGradient><linearGradient id="grass" x2="0" y2="1"><stop stop-color="#9abf92"/><stop offset="1" stop-color="#638c64"/></linearGradient><linearGradient id="b" x2="0" y2="1"><stop stop-color="#e9f2ed"/><stop offset="1" stop-color="#bbcfc5"/></linearGradient></defs>
+<rect width="1280" height="760" fill="url(#sky)"/><circle cx="1000" cy="135" r="75" fill="#fff6c9" opacity=".9"/>
+<g fill="#fff" opacity=".72"><ellipse cx="174" cy="125" rx="125" ry="30"/><ellipse cx="236" cy="116" rx="85" ry="37"/><ellipse cx="623" cy="155" rx="150" ry="28"/></g>
+<g fill="#cadbd7"><rect x="0" y="270" width="107" height="200"/><rect x="120" y="316" width="156" height="154"/><rect x="290" y="275" width="125" height="195"/><rect x="860" y="260" width="106" height="210"/><rect x="981" y="296" width="102" height="174"/><rect x="1097" y="245" width="183" height="225"/></g>
+<g fill="#97bbc7"><rect x="0" y="303" width="70" height="168"/><rect x="445" y="355" width="150" height="115"/><rect x="780" y="340" width="150" height="130"/><rect x="1200" y="315" width="80" height="155"/></g>
+<path d="M0 440Q300 413 615 444T1280 420V760H0Z" fill="#b6d3ae"/><path d="M0 525Q330 460 600 520T1280 480V760H0Z" fill="url(#grass)"/>
+<g fill="none" stroke="#9bafab" stroke-width="17" stroke-linecap="round"><path d="M620 422L595 256M620 422L645 256M620 416L570 313M620 416L670 313"/></g>
+<circle cx="620" cy="246" r="56" fill="#d2be77" stroke="#f2e9bb" stroke-width="12"/><path d="M577 247H664M618 189V302M587 210Q617 250 651 291" fill="none" stroke="#f8f3d4" stroke-width="5" opacity=".65"/>
+<path d="M0 714Q345 591 610 598Q900 612 1280 704V760H0Z" fill="#e7dfc5"/><path d="M0 752Q345 625 610 637Q900 653 1280 742" fill="none" stroke="#fff7dd" stroke-width="7"/>
+<g fill="#518963"><circle cx="134" cy="522" r="70"/><circle cx="190" cy="510" r="58"/><circle cx="1051" cy="526" r="78"/><circle cx="1103" cy="513" r="56"/><circle cx="930" cy="530" r="55"/></g>
+<g fill="#3d724e"><rect x="155" y="510" width="14" height="116"/><rect x="1056" y="514" width="15" height="123"/></g>
+<g fill="#fdf8e2"><circle cx="93" cy="627" r="8"/><circle cx="230" cy="605" r="7"/><circle cx="1177" cy="631" r="7"/></g>
+</svg>
