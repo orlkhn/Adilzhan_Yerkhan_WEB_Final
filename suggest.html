@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Suggest a place in Astana for NightShift and see your saved ideas."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>Suggest a spot | NightShift</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/suggest.js"></script>
+  </head>
+  <body data-page="suggest">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="explore.html">Explore</a
+          ><a href="compare.html">Plan</a
+          ><a href="suggest.html" aria-current="page">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero container">
+        <div>
+          <p class="eyebrow">SHARE THE GOOD STUFF / 03</p>
+          <h1>Know a place <em>we'd love?</em></h1>
+          <p class="lead-text">
+            Tell us about a place in Astana. A quiet corner, a viewpoint, a
+            place that feels like yours. Your idea becomes a private card in Explore and Plan on this device. Public publication would require team review.
+          </p>
+        </div>
+        <div class="page-hero-decoration" aria-hidden="true">
+          <span data-icon="arrow"></span
+          ><small>THE BEST IDEAS ARE SHARED</small>
+        </div>
+      </section>
+      <section
+        class="section container suggest-layout"
+        aria-label="Suggest an idea"
+      >
+        <div class="suggest-aside">
+          <p class="eyebrow">YOUR LITTLE DISCOVERY</p>
+          <h2>
+            Great nights start with
+            <span class="accent-italic">good tips.</span>
+          </h2>
+          <p>
+            Tell the story, not just the name. What makes this spot worth
+            getting out for?
+          </p>
+          <div class="aside-art">
+            <span data-icon="star"></span>
+            <div>
+              <small>YOUR IDEA MATTERS</small><strong>Pass it on.</strong>
+            </div>
+          </div>
+          <div class="tip-box">
+            <button
+              type="button"
+              id="tips-toggle"
+              class="tips-toggle"
+              aria-controls="tips-content"
+              aria-expanded="false"
+            >
+              How to write a good suggestion <span data-icon="plus"></span>
+            </button>
+            <div id="tips-content" hidden>
+              <p>
+                Give the spot a clear name, choose its vibe, and describe the
+                activity and who would enjoy it. Please avoid sharing sensitive
+                personal information.
+              </p>
+            </div>
+          </div>
+          <p class="small-note">
+            Private personal ideas appear in Explore and Plan immediately on this device.
+            They are not published to other visitors (there is no server).
+          </p>
+        </div>
+        <div>
+          <form id="suggest-form" class="form-panel suggest-form" novalidate>
+            <div class="form-kicker">
+              <span>01 — THE DETAILS</span
+              ><span>ALL FIELDS MARKED * REQUIRED</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="visitor-name"
+                  >Your name <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  id="visitor-name"
+                  name="visitorName"
+                  autocomplete="name"
+                  maxlength="60"
+                  placeholder="Your first name"
+                  aria-describedby="visitor-name-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="visitor-name-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="email"
+                  >Email <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  maxlength="120"
+                  placeholder="you@example.com"
+                  aria-describedby="email-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="email-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="spot-name"
+                  >Spot name <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  id="spot-name"
+                  name="spotName"
+                  minlength="2"
+                  maxlength="80"
+                  placeholder="What is it called?"
+                  aria-describedby="spot-name-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="spot-name-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="category"
+                  >Category <span class="required">*</span></label
+                ><select
+                  class="form-select"
+                  id="category"
+                  name="category"
+                  aria-describedby="category-error"
+                  required
+                >
+                  <option value="">Choose a category</option>
+                  <option value="slow">Slow down</option>
+                  <option value="social">Get together</option>
+                  <option value="outside">Step outside</option>
+                </select>
+                <div
+                  class="field-error"
+                  id="category-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="spot-budget"
+                  >Estimated price (₸) <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  type="number"
+                  id="spot-budget"
+                  name="spotBudget"
+                  min="0"
+                  max="50000"
+                  step="100"
+                  placeholder="e.g. 3500"
+                  aria-describedby="spot-budget-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="spot-budget-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="spot-minutes">Time to spend (min) <span class="required">*</span></label>
+                <input id="spot-minutes" class="form-control" type="number" name="spotMinutes" min="15" max="360" step="5" value="60" aria-describedby="spot-minutes-error" required>
+                <div id="spot-minutes-error" class="field-error" aria-live="polite"></div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="spot-address">Street or area (optional)</label>
+                <input id="spot-address" class="form-control" type="text" name="spotAddress" maxlength="120" placeholder="e.g. Yesil district, Astana" aria-describedby="spot-address-error">
+                <div id="spot-address-error" class="field-error" aria-live="polite"></div>
+              </div>
+              <div class="col-12">
+                <div class="suggest-photo-wrap">
+                  <label class="form-label" for="spot-photo">Your own photo (optional)</label>
+                  <p class="upload-explain">JPG, PNG or WebP, up to 8 MB. We automatically crop to 960 × 608 pixels without stretching and compress it before saving.</p>
+                  <input id="spot-photo" class="form-control" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="spot-photo-error">
+                  <div id="spot-photo-error" class="field-error" aria-live="polite"></div>
+                  <div class="suggest-preview" id="spot-photo-preview" hidden><img id="spot-photo-preview-img" alt="Preview of the cropped personal place photo"></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="reason"
+                  >What makes it special? <span class="required">*</span></label
+                ><textarea
+                  class="form-control"
+                  id="reason"
+                  name="reason"
+                  rows="5"
+                  minlength="20"
+                  maxlength="500"
+                  placeholder="Describe the activity, atmosphere and who it suits..."
+                  aria-describedby="reason-error reason-help"
+                  required
+                ></textarea>
+                <div class="character-count" id="reason-help">
+                  At least 20 characters · <span id="reason-count">0</span> /
+                  500
+                </div>
+                <div
+                  class="field-error"
+                  id="reason-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+            <div class="form-legal">
+              Your personal place is visible in Explore and Plan on this browser only.
+              Your email is validated but not stored with the suggestion.
+            </div>
+            <button class="btn btn-lime btn-pill full-width" type="submit">
+              Save my place <span data-icon="arrow"></span>
+            </button>
+          </form>
+          <div
+            id="suggest-success"
+            class="save-message large-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+          <div class="my-suggestions">
+            <div class="my-suggestions-head">
+              <div>
+                <p class="eyebrow">LOCALLY SAVED IDEAS</p>
+                <h2>Your personal places</h2>
+              </div>
+              <button class="text-button" id="clear-suggestions" type="button">
+                Clear mine <span data-icon="reset"></span>
+              </button>
+            </div>
+            <div
+              id="suggestions-list"
+              class="suggestions-list"
+              aria-live="polite"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Sources, libraries and AI assistance used on NightShift."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>Credits | NightShift</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+  </head>
+  <body data-page="credits">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="explore.html">Explore</a
+          ><a href="compare.html">Plan</a><a href="suggest.html">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero container">
+        <div>
+          <p class="eyebrow">THANK YOU / CREDITS</p>
+          <h1>What we used <em>and why.</em></h1>
+          <p class="lead-text">
+            Everything that is not our own code or writing is listed here, with
+            its source.
+          </p>
+        </div>
+        <div class="page-hero-decoration" aria-hidden="true">
+          <span data-icon="spark"></span><small>HONEST SOURCES</small>
+        </div>
+      </section>
+      <section class="section container" aria-label="Credits">
+        <ul class="credits-list">
+          <li>
+            <strong>Bootstrap 5.3.6</strong> — grid, form fields, buttons and
+            utility classes (MIT licence).
+            <a href="https://getbootstrap.com/" rel="noopener"
+              >getbootstrap.com</a
+            >. File: <code>css/bootstrap.min.css</code>. It is a framework, not
+            a downloaded page template.
+          </li>
+          <li>
+            <strong>jQuery 3.6.1</strong> — fade, slide and animate effects,
+            toasts and accordions (MIT licence).
+            <a href="https://jquery.com/" rel="noopener">jquery.com</a>. File:
+            <code>js/jquery.min.js</code>.
+          </li>
+          <li>
+            <strong>Illustrations</strong> — the 16 SVG images in
+            <code>images/</code> (the night skyline and one stylised drawing for
+            each of the 15 places) were generated for this project as custom SVG
+            code with AI help. They are artistic drawings, not photographs. The
+            small icons are our own inline SVG set (<code>js/icons.js</code>);
+            no emoji are used.
+          </li>
+          <li>
+            <strong>AI assistance for the Final</strong> — Claude (Anthropic)
+            helped us write and review the Final additions: light/dark theme,
+            accounts and profile page, toast notifications and the sticky
+            header. We tested the result and can explain every file.
+          </li>
+          <li>
+            <strong>Content</strong> — the 15 places are real venues and
+            landmarks in Astana (Coffee Boom, Okadzaki, Botanical Garden,
+            Presidential Park, Prime Game Hub, Chaplin Cinema, Pingwin
+            Bowling, Triathlon Park, Dodo Pizza, Doner na Abaya, Shaurma Food,
+            Bauyrdaq, Yamato Cyber Club, Baiterek Square, Samal Park).
+            Descriptions were written by the team. Prices are approximate:
+            some come from public pages (sxodim.com, eurasia.travel), the rest
+            are our estimates, and every card says which. They can change, so
+            check with the venue. Cards open Google Maps for the location.
+            There is no backend, booking or payment.
+          </li>
+          <li>
+            <strong>Fonts</strong> — system fonts only (nothing downloaded).
+          </li>
+        </ul>
+      </section>
+        <section class="section container" aria-label="Photo credits"><p class="eyebrow">PHOTO SOURCES</p><h2>Real photography, credited.</h2><p class="lead-text">For parks and landmarks, the photos depict the actual locations. For named businesses, the photos show the activity or food, not the venue itself, and are marked illustrative. All photographs are served by Wikimedia Commons; illustrations appear if offline.</p><div class="credit-photo-list"><ul><li><strong>coffeeboom</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Cafe_Interior_with_Coffee.jpg">Kavig624 · CC0 1.0</a></li><li><strong>okadzaki</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Japanese_Sushi_platter.jpg">Luvpixy · CC BY-SA 4.0</a></li><li><strong>botanical</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Botanical_garden%2C_Astana_(P1190700).jpg">MB-one · CC BY-SA 4.0</a></li><li><strong>bauyrdaq</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Kazakh_culture_Baursak.jpg">Armanilo · CC BY 4.0</a></li><li><strong>presidential</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:PresidentialParkAstana.jpg">TóastyTwo · CC BY 4.0</a></li><li><strong>triatlon</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Astana_Triathlon_Park_View.jpg">Gfrc360 · CC BY-SA 4.0</a></li><li><strong>baiterek-square</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:B%C3%A4iterek_tower.jpg">Dauren Nabijan · CC0 1.0</a></li><li><strong>samal</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Astana%2C_park.jpg">Nikolamikovic82 · CC0 1.0</a></li><li><strong>primegame</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:LAN-Party.jpg">Sanza29 · CC BY-SA 4.0</a></li><li><strong>yamato</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:LAN_Party.jpg">Stuballew · CC BY-SA 3.0</a></li><li><strong>chaplin</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Cinema-long-exposure-hdr-0a.jpg">Adamantios · CC BY-SA 3.0</a></li><li><strong>pingwin</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:BowlingAlley.jpg">Raysonho · CC0 1.0</a></li><li><strong>dodo</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Photography_by_David_Adam_Kess%2C_pizza.jpg">David Adam Kess · CC BY-SA 4.0</a></li><li><strong>doner</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Doner_Kebab.jpg">prufrock27 · CC BY 2.0</a></li><li><strong>shaurma</strong> · illustrative · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Shawarma_in_preparation.jpg">Vis M · CC BY-SA 4.0</a></li><li><strong>botanical (evening)</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Flowers_at_sunset_in_Botanical_Garden_Nur-Sultan_city.jpg">DiamondMoore · CC BY-SA 4.0</a></li><li><strong>baiterek-square (evening)</strong> · actual place · <a target="_blank" rel="noopener noreferrer" href="https://commons.wikimedia.org/wiki/File:Baiterek_monument_at_night.jpg">Dauren Nabijan · CC0 1.0</a></li></ul></div></section>
+</main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>

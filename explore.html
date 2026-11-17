@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Find evening activities in Astana by searching and filtering 15 real places."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>Explore ideas | NightShift</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/explore.js"></script>
+  </head>
+  <body data-page="explore">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a
+          ><a href="explore.html" aria-current="page">Explore</a
+          ><a href="compare.html">Plan</a><a href="suggest.html">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero container">
+        <div>
+          <p class="eyebrow">THE NIGHT DIRECTORY / 01</p>
+          <h1>Find your kind <em>of night.</em></h1>
+          <p class="lead-text">
+            Fifteen real places in Astana, from coffee and cinema to bowling
+            and parks. Search, filter and save the ones you love.
+          </p>
+        </div>
+        <div class="page-hero-decoration" aria-hidden="true">
+          <span>15</span><small>REAL PLACES IN ASTANA</small>
+        </div>
+      </section>
+      <section
+        class="section container explore-section"
+        aria-label="Explore activities"
+      >
+        <div class="filter-shell">
+          <div class="filter-top">
+            <div>
+              <h2 class="filter-title">Explore ideas</h2>
+              <p class="minor">Find the right vibe for tonight.</p>
+            </div>
+            <div class="result-counter" aria-live="polite">
+              <span id="result-count">15</span> ideas
+            </div>
+          </div>
+          <div class="filter-controls">
+            <div class="search-wrap">
+              <label class="visually-hidden" for="search-input"
+                >Search activities</label
+              ><span class="search-icon" data-icon="search"></span
+              ><input
+                class="form-control"
+                id="search-input"
+                type="search"
+                placeholder="Search coffee, bowling, park..."
+                autocomplete="off"
+>
+            </div>
+            <div class="select-wrap">
+              <label class="visually-hidden" for="budget-filter">Budget</label
+              ><select class="form-select" id="budget-filter">
+                <option value="all">Any budget</option>
+                <option value="0">Free</option>
+                <option value="1">₸ · Small</option>
+                <option value="2">₸₸ · Medium</option>
+                <option value="3">₸₸₸ · Treat</option>
+              </select>
+            </div>
+            <div class="select-wrap">
+              <label class="visually-hidden" for="sort-filter">Sort ideas</label
+              ><select class="form-select" id="sort-filter">
+                <option value="featured">Featured first</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="duration-asc">Shortest first</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-bottom">
+            <div class="category-tabs" role="group" aria-label="Filter by mood">
+              <button
+                type="button"
+                class="tab-chip active"
+                data-category="all"
+                aria-pressed="true"
+              >
+                All places <span>15</span></button
+              ><button
+                type="button"
+                class="tab-chip"
+                data-category="slow"
+                aria-pressed="false"
+              >
+                <span data-icon="coffee"></span> Slow down</button
+              ><button
+                type="button"
+                class="tab-chip"
+                data-category="social"
+                aria-pressed="false"
+              >
+                <span data-icon="dice"></span> Get together</button
+              ><button
+                type="button"
+                class="tab-chip"
+                data-category="outside"
+                aria-pressed="false"
+              >
+                <span data-icon="moon"></span> Step outside</button
+              ><button
+                type="button"
+                class="tab-chip"
+                data-category="saved"
+                aria-pressed="false"
+              >
+                <span data-icon="heart"></span> Saved
+                <span id="saved-tab-count">0</span>
+              </button>
+            <button type="button" class="tab-chip" data-category="mine" aria-pressed="false">My places</button>
+            </div>
+            <button type="button" class="text-button" id="reset-filters">
+              Reset filters <span data-icon="reset"></span>
+            </button>
+          </div>
+        </div>
+        <div id="activity-grid" class="activity-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span data-icon="moon"></span>
+          <h3>Nothing found.</h3>
+          <p>Try another search or clear the filters.</p>
+          <button type="button" class="btn btn-lime btn-pill" id="empty-reset">
+            Show all ideas
+          </button>
+        </div>
+        <div class="explore-note">
+          <span data-icon="spark"></span>
+          <p>
+            Places are real; prices are approximate (see the note on each card)
+            and can change, so check before you go. Your saved picks stay on this device.
+            <span id="favorite-count">0</span> saved ·
+            <a href="profile.html" class="inline-link"
+              >see them on your profile</a
+            >.
+          </p>
+          <a href="compare.html" class="section-link"
+            >Turn ideas into a plan <span data-icon="arrow"></span
+          ></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>
