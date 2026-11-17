@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Create a free NightShift demo account to keep your places and plans on a profile."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>Sign up | NightShift</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/signup.js"></script>
+  </head>
+  <body data-page="signup">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="explore.html">Explore</a
+          ><a href="compare.html">Plan</a><a href="suggest.html">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero container">
+        <div>
+          <p class="eyebrow">JOIN THE NIGHT / 05</p>
+          <h1>Get your <em>Night Pass.</em></h1>
+          <p class="lead-text">
+            Create a free demo account in a minute. Your places and plans get
+            their own profile page.
+          </p>
+        </div>
+        <div class="page-hero-decoration" aria-hidden="true">
+          <span data-icon="star"></span><small>FREE · LOCAL · DEMO</small>
+        </div>
+      </section>
+      <section class="section container auth-layout" aria-label="Sign up">
+        <div class="auth-aside">
+          <p class="eyebrow">WHAT YOU GET</p>
+          <h2>Your own <span class="accent-italic">night profile.</span></h2>
+          <ul class="perk-list">
+            <li>A Night Pass with your name and pass number</li>
+            <li>Saved places and plans that stay after a reload</li>
+            <li>Remove items one by one or clear everything</li>
+          </ul>
+          <div class="demo-note">
+            <span data-icon="alert"></span>
+            <p>
+              <strong>Demo account only.</strong> This site has no server.
+              Accounts live in this browser's localStorage, so please
+              <strong>do not use a real password</strong>.
+            </p>
+          </div>
+        </div>
+        <div>
+          <form id="signup-form" class="form-panel" novalidate>
+            <div class="form-kicker">
+              <span>CREATE ACCOUNT</span><span>ALL FIELDS REQUIRED</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="signup-name"
+                  >Your name <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  id="signup-name"
+                  name="name"
+                  autocomplete="name"
+                  maxlength="50"
+                  placeholder="Your first name"
+                  aria-describedby="signup-name-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="signup-name-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="signup-email"
+                  >Email <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  id="signup-email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  maxlength="120"
+                  placeholder="you@example.com"
+                  aria-describedby="signup-email-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="signup-email-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="signup-password"
+                  >Password <span class="required">*</span></label
+                >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    id="signup-password"
+                    type="password"
+                    autocomplete="new-password"
+                    aria-describedby="signup-password-error"
+                    required
+><button
+                    type="button"
+                    class="pw-toggle"
+                    id="signup-pw-toggle"
+                    aria-pressed="false"
+                    aria-label="Show or hide the password"
+                  >
+                    Show
+                  </button>
+                </div>
+                <div class="strength">
+                  <div
+                    class="strength-bar"
+                    id="strength-bar"
+                    data-level="0"
+                    aria-hidden="true"
+                  >
+                    <span></span>
+                  </div>
+                  <span id="strength-text" aria-live="polite">Strength</span>
+                </div>
+                <div
+                  class="field-error"
+                  id="signup-password-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="signup-confirm"
+                  >Repeat password <span class="required">*</span></label
+                >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    id="signup-confirm"
+                    type="password"
+                    autocomplete="new-password"
+                    aria-describedby="signup-confirm-error"
+                    required
+><button
+                    type="button"
+                    class="pw-toggle"
+                    id="signup-confirm-toggle"
+                    aria-pressed="false"
+                    aria-label="Show or hide the password"
+                  >
+                    Show
+                  </button>
+                </div>
+                <div
+                  class="field-error"
+                  id="signup-confirm-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="signup-agree"
+                    data-label="Demo confirmation"
+                    aria-describedby="signup-agree-error"
+                    required
+><label class="form-check-label" for="signup-agree"
+                    >I understand this is a demo and I will not use a real
+                    password. <span class="required">*</span></label
+                  >
+                </div>
+                <div
+                  class="field-error"
+                  id="signup-agree-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+            <div class="form-legal">
+              Your account is saved only in this browser. Passwords are stored
+              as a scrambled value, never as plain text, but this is not real
+              security.
+            </div>
+            <button class="btn btn-lime btn-pill full-width" type="submit">
+              Create my Night Pass <span data-icon="arrow"></span>
+            </button>
+            <p class="auth-switch">
+              Already have an account? <a href="login.html">Log in</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>
