@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Your NightShift Night Pass with saved places, plans and ideas."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>My profile | NightShift</title>
+    <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/profile.js"></script>
+  </head>
+  <body data-page="profile">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="explore.html">Explore</a
+          ><a href="compare.html">Plan</a><a href="suggest.html">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="section container profile-top" aria-label="Your profile">
+        <div class="pass-card">
+          <div class="pass-main">
+            <div class="pass-avatar" id="pass-avatar" aria-hidden="true"></div>
+            <div>
+              <p class="eyebrow">YOUR NIGHT PASS</p>
+              <h1 id="pass-name">Your profile</h1>
+              <p id="pass-email"></p>
+              <p id="pass-since"></p>
+            </div>
+          </div>
+          <div class="pass-stub">
+            <div>
+              <small>PASS NO.</small>
+              <div class="pass-number" id="pass-number"></div>
+            </div>
+            <div class="pass-bars" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="row g-3 mt-1">
+          <div class="col-6 col-md-3">
+            <div class="stat-box">
+              <span>SAVED PLACES</span><strong id="stat-places">0</strong>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-box">
+              <span>SAVED PLANS</span><strong id="stat-plans">0</strong>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-box">
+              <span>IDEAS SHARED</span><strong id="stat-ideas">0</strong>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-box">
+              <span>TOTAL PLANNED</span><strong id="stat-total">₸0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <div class="block-head">
+            <div>
+              <p class="eyebrow">01 / SAVED PLACES</p>
+              <h2>Places you love</h2>
+            </div>
+            <div class="account-actions">
+              <a class="section-link" href="explore.html"
+                >Find more <span data-icon="arrow"></span></a
+              ><button type="button" class="mini-btn" id="clear-places">
+                Clear all
+              </button>
+            </div>
+          </div>
+          <div id="places-grid" class="saved-grid" aria-live="polite"></div>
+          <div class="empty-box" id="places-empty" hidden>
+            <strong>No saved places yet.</strong>
+            <p>
+              Tap the heart button on any idea in Explore and it will appear
+              here.
+            </p>
+            <a class="btn btn-lime btn-pill" href="explore.html"
+              >Explore ideas <span data-icon="arrow"></span
+            ></a>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <div class="block-head">
+            <div>
+              <p class="eyebrow">02 / SAVED PLANS</p>
+              <h2>Your planned nights</h2>
+            </div>
+            <div class="account-actions">
+              <a class="section-link" href="compare.html"
+                >New plan <span data-icon="arrow"></span></a
+              ><button type="button" class="mini-btn" id="clear-plans">
+                Clear all
+              </button>
+            </div>
+          </div>
+          <div id="plans-list" class="plan-list" aria-live="polite"></div>
+          <div class="empty-box" id="plans-empty" hidden>
+            <strong>No saved plans yet.</strong>
+            <p>
+              Build an evening in the planner and press Save: it will show up
+              here with its cost and stops.
+            </p>
+            <a class="btn btn-lime btn-pill" href="compare.html"
+              >Plan a night <span data-icon="arrow"></span
+            ></a>
+          </div>
+        </div>
+
+        <div class="profile-block">
+          <div class="block-head">
+            <div>
+              <p class="eyebrow">03 / SHARED IDEAS</p>
+              <h2>Spots you suggested</h2>
+            </div>
+            <div class="account-actions">
+              <a class="section-link" href="suggest.html"
+                >Share an idea <span data-icon="arrow"></span></a
+              ><button type="button" class="mini-btn" id="clear-ideas">
+                Clear all
+              </button>
+            </div>
+          </div>
+          <div
+            id="ideas-list"
+            class="suggestions-list"
+            aria-live="polite"
+          ></div>
+          <div class="empty-box" id="ideas-empty" hidden>
+            <strong>No ideas shared yet.</strong>
+            <p>
+              Know a place we would love? Tell us about it on the Suggest page.
+            </p>
+            <a class="btn btn-lime btn-pill" href="suggest.html"
+              >Suggest a spot <span data-icon="arrow"></span
+            ></a>
+          </div>
+        </div>
+        <div class="profile-block">
+          <div class="block-head">
+            <div>
+              <p class="eyebrow">04 / ACCOUNT</p>
+              <h2>Settings</h2>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
+              <form id="rename-form" class="form-panel" novalidate>
+                <label class="form-label" for="rename-name">Display name</label
+                ><input
+                  class="form-control"
+                  id="rename-name"
+                  name="name"
+                  maxlength="50"
+                  autocomplete="name"
+                  aria-describedby="rename-name-error"
+>
+                <div
+                  class="field-error"
+                  id="rename-name-error"
+                  aria-live="polite"
+                ></div>
+                <button class="btn btn-lime btn-pill full-width" type="submit">
+                  Save name
+                </button>
+              </form>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="form-panel">
+                <p class="form-label">Session</p>
+                <p class="minor">
+                  Log out on this device, or delete this demo account together
+                  with its saved places, plans and ideas.
+                </p>
+                <div class="account-actions">
+                  <button
+                    type="button"
+                    class="btn btn-ghost btn-pill"
+                    id="profile-logout"
+                  >
+                    Log out</button
+                  ><button type="button" class="mini-btn" id="delete-account">
+                    Delete account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>

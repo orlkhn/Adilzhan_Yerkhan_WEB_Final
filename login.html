@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Log in to your NightShift demo account to see saved places and plans."
+>
+    <meta name="theme-color" content="#10151f">
+    <title>Log in | NightShift</title>
+    <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("ns-theme"));
+          document.documentElement.dataset.theme =
+            t === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/login.js"></script>
+  </head>
+  <body data-page="login">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="index.html" aria-label="NightShift home"
+          ><span class="brand-mark" data-icon="star"></span>night<span
+            >shift.</span
+          ></a
+        >
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span data-icon="menu"></span><span class="sr-mobile">Menu</span>
+        </button>
+        <nav class="nav-links" id="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="explore.html">Explore</a
+          ><a href="compare.html">Plan</a><a href="suggest.html">Suggest</a>
+          <div class="nav-account" id="nav-account"></div>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-pressed="false"
+          aria-label="Night shift is on. Switch to Day shift"
+          title="Switch to Day shift"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"
+            ></path></svg
+          ><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero container">
+        <div>
+          <p class="eyebrow">WELCOME BACK / 04</p>
+          <h1>Log in to <em>your pass.</em></h1>
+          <p class="lead-text">
+            Pick up where you left off: your saved places and plans are waiting
+            on your profile.
+          </p>
+        </div>
+        <div class="page-hero-decoration" aria-hidden="true">
+          <span data-icon="moon"></span><small>YOUR NIGHT, SAVED</small>
+        </div>
+      </section>
+      <section class="section container auth-layout" aria-label="Log in">
+        <div class="auth-aside">
+          <p class="eyebrow">WHY AN ACCOUNT?</p>
+          <h2>
+            One profile for <span class="accent-italic">every night.</span>
+          </h2>
+          <ul class="perk-list">
+            <li>Save favourite places with the heart button</li>
+            <li>Keep your night plans with date, cost and stops</li>
+            <li>See everything with counters on your profile</li>
+          </ul>
+          <div class="demo-note">
+            <span data-icon="alert"></span>
+            <p>
+              <strong>Demo account only.</strong> This site has no server.
+              Accounts live in this browser's localStorage, so please
+              <strong>do not use a real password</strong>.
+            </p>
+          </div>
+        </div>
+        <div>
+          <form id="login-form" class="form-panel" novalidate>
+            <div class="form-kicker">
+              <span>LOG IN</span><span>ALL FIELDS REQUIRED</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label" for="login-email"
+                  >Email <span class="required">*</span></label
+                ><input
+                  class="form-control"
+                  id="login-email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  maxlength="120"
+                  placeholder="you@example.com"
+                  aria-describedby="login-email-error"
+                  required
+>
+                <div
+                  class="field-error"
+                  id="login-email-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="login-password"
+                  >Password <span class="required">*</span></label
+                >
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    id="login-password"
+                    type="password"
+                    autocomplete="current-password"
+                    aria-describedby="login-password-error"
+                    required
+><button
+                    type="button"
+                    class="pw-toggle"
+                    id="login-pw-toggle"
+                    aria-pressed="false"
+                    aria-label="Show or hide the password"
+                  >
+                    Show
+                  </button>
+                </div>
+                <div
+                  class="field-error"
+                  id="login-password-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+            <button class="btn btn-lime btn-pill full-width" type="submit">
+              Log in <span data-icon="arrow"></span>
+            </button>
+            <p class="auth-switch">
+              New to NightShift? <a href="signup.html">Create an account</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div>
+          <a class="brand" href="index.html">night<span>shift.</span></a>
+          <p>For nights worth remembering, without overthinking them.</p>
+        </div>
+        <div class="footer-links">
+          <a href="explore.html">Explore ideas</a
+          ><a href="compare.html">Plan the night</a
+          ><a href="suggest.html">Suggest a spot</a
+          ><a href="profile.html">My profile</a
+          ><a href="credits.html">Credits</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 NightShift</span
+        ><span>By Yerkhan Amangaliyev &amp; Adilzhan Oralkhan</span>
+      </div>
+    </footer>
+  </body>
+</html>
