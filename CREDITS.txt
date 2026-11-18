@@ -1,4 +1,4 @@
- NIGHTSHFT — SOURCES AND ACKNOWLEDGEMENTS
+NIGHTSHIFT — SOURCES AND ACKNOWLEDGEMENTS
 WEB Technologies 1 (Front End) — Final, 2026
 
 PROJECT
@@ -25,19 +25,26 @@ SVG files: images/*.svg.
 Icons: our own inline SVG set in js/icons.js (no emoji, no icon packs).
 No downloaded website template or UI theme is used.
 
-PRIOR MIDTERM SOURCES
-The earlier Midterm repository contains Unsplash photographs and previously generated images,
-credited in its own CREDITS.txt history. Those old photos are not needed by this standalone version.
-Original repository: https://github.com/Elkanmn/Midterm_AmangaliyevYerkhan_AdilzhanOralkhan
+DEVELOPMENT SUPPORT
+Claude (Anthropic) and ChatGPT (OpenAI) were used for coding assistance, debugging and design suggestions.
+The website integrates Bootstrap grid and form components with project-specific CSS and JavaScript.
 
-FINAL ADDITIONS
-Light/dark theme (Day shift / Night shift), demo accounts (Sign Up, Log In, Profile, Log Out),
-saved places and plans, toast notifications and the sticky header were written with AI assistance
-from Claude (Anthropic) and then tested and reviewed by the team. Listed on the Credits page of the site too.
-Bootstrap grid, form fields, input groups and form-check are used from Bootstrap 5.3.6.
+PHOTO SOURCES — ACTIVE ASSETS (18 NOVEMBER 2026)
+The current visual catalog has ten locally stored, team-provided photos or logos under images/places/:
+Coffee Boom, Okadzaki, Botanical Garden, Bauyrdaq, Baiterek Square, Prime Game Hub,
+Yamato Cyber Club, Dodo Pizza, Doner na Abaya and Shaurma Food.
+These visuals were supplied by the team, including material found through Google Search or publicly
+viewable Instagram posts. Public visibility is not a reuse license; rights remain with the creators.
+The Baiterek photo is also displayed in the Home hero in both themes.
 
+The five remaining catalog photographs are linked from Wikimedia Commons, with SVG illustration fallback:
+- Presidential Park — TóastyTwo, CC BY 4.0: https://commons.wikimedia.org/wiki/File:PresidentialParkAstana.jpg
+- Triathlon Park — Gfrc360, CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Astana_Triathlon_Park_View.jpg
+- Samal Park (illustrative) — Nikolamikovic82, CC0 1.0: https://commons.wikimedia.org/wiki/File:Astana%2C_park.jpg
+- Chaplin Cinema (illustrative) — Adamantios, CC BY-SA 3.0: https://commons.wikimedia.org/wiki/File:Cinema-long-exposure-hdr-0a.jpg
+- Pingwin Bowling (illustrative) — Raysonho, CC0 1.0: https://commons.wikimedia.org/wiki/File:BowlingAlley.jpg
 
-PHOTO ADDITIONS (FINAL REVISION)
+PREVIOUS PHOTOGRAPH SOURCES (REPLACED IN THE FINAL BUILD)
 - coffeeboom: Kavig624, “Cafe Interior with Coffee.jpg”, CC0 1.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Cafe_Interior_with_Coffee.jpg
 - okadzaki: Luvpixy, “Japanese Sushi platter.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Japanese_Sushi_platter.jpg
 - botanical: MB-one, “Botanical garden, Astana (P1190700).jpg”, CC BY-SA 4.0; actual place; https://commons.wikimedia.org/wiki/File:Botanical_garden%2C_Astana_(P1190700).jpg
@@ -55,4 +62,7 @@ PHOTO ADDITIONS (FINAL REVISION)
 - shaurma: Vis M, “Shawarma in preparation.jpg”, CC BY-SA 4.0; representative photograph; not the named venue; https://commons.wikimedia.org/wiki/File:Shawarma_in_preparation.jpg
 - botanical (evening): DiamondMoore, “Flowers at sunset in Botanical Garden Nur-Sultan city.jpg”, CC BY-SA 4.0; actual place; https://commons.wikimedia.org/wiki/File:Flowers_at_sunset_in_Botanical_Garden_Nur-Sultan_city.jpg
 - baiterek-square (evening): Dauren Nabijan, “Baiterek monument at night.jpg”, CC0 1.0; actual place; https://commons.wikimedia.org/wiki/File:Baiterek_monument_at_night.jpg
-Photos are externally loaded from Wikimedia Commons and require Internet. Locally available SVG fallback remains. Specific business photos are representative, not photos of those venues. Photos are cropped in layout; no misleading claim that the representative photos show named businesses.
+The sources above are historical and superseded by the active-asset list. Five remaining external images require Internet; SVG fallbacks are included.
+
+FINAL PHOTO REPLACEMENTS — 18 NOVEMBER 2026
+Three pictures supplied by the project team replace the previous Doner na Abaya, Botanical Garden and Baiterek Square catalog images. The team-provided Baiterek photo is also used on the Home hero in both themes. Original SVG assets remain in the project but are not used by the Home hero. See PHOTO_CREDITS.md for paths and provenance. Ownership of team-provided photographs and logos remains with their original rights holders.

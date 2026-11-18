@@ -28,21 +28,22 @@ and keep everything on your own Night Pass profile. No backend: all data is in l
 Demo only: do not use a real password.
 
 
-## Revision after Final feedback
+## Final features
 
-Real photos have documented Wikimedia Commons author and license attribution in PHOTO_CREDITS.md, CREDITS.txt and credits.html. Photos are remote and need a connection, with SVG fallback. Locations without licensed authentic venue photography have clearly labeled representative images. Switch Day/Night to see separate photos on Botanical Garden and Baiterek. Day mode has a cleaner sage/white palette and an actual daytime photograph for the hero.
+- 15 named Astana places with price and duration estimates, ten bundled team-provided images/logos and five externally linked Wikimedia Commons images (SVG fallback included).
+- Day/Night themes via CSS variables with a persistent, keyboard-accessible toggle. The same local Baiterek image is used on the Home hero in both themes.
+- Home: mood choices, Surprise Me and a seamless repeating ticker; decorative rings are centered on a common axis.
+- Explore: live search, categories, budget filter, sorting, favorites and personal places.
+- Plan: three-stop itinerary, Saved only and My places filters, optional replacement dialog, calculated cost/timeline and saved plans.
+- Suggest: validated form, private user places, optional address, duration and image upload. JPG/PNG/WebP uploads (up to 8 MB) are cropped to 960×608, compressed and stored locally. The five latest user places are retained.
+- Night Pass: demonstration Sign Up, Log In, Profile and Log Out with per-user saved data. Data stays in this browser; real passwords should not be used.
 
-Suggest now saves private user places (including optional address, duration and photo) into your local Explore and Plan catalogs. Uploaded JPG/PNG/WebP photos (maximum 8 MB) are center-cropped to a consistent 960×608 rectangle and compressed into JPEG before localStorage saving. Only the five newest private places are kept per account; very large photos that cannot fit the browser quota will be refused with a message. A public moderation workflow would require a backend.
+## Sources and licensing
 
-Plan includes Saved only and My places filters plus sorting by name, price, or duration. Existing demo Sign Up / Log In / Profile remains; do NOT reuse your real-world password on this demo. This is not server-side authentication.
+See `CREDITS.txt`, `PHOTO_CREDITS.md` and `credits.html` for Bootstrap, jQuery, SVG artwork, AI development assistance and photo/brand image provenance. Images from the web or social media are not automatically licensed for reuse merely because they are publicly accessible.
 
-Before the defense, test at widths 375px, 768px and 1280px in both themes; open the site with Live Server or another HTTP server (not file://); check external photos with an internet connection.
+## Project URLs
 
-If a guest creates places before signing up, guest suggestions, favorites and plans are merged into the newly created demo account on sign-in; the site remains local-only. When offline, a custom daytime SVG illustrates the hero until the licensed photo is available.
-
-## Existing team repository and publication
-
-- Original repository: https://github.com/orlkhn/Adilzhan_Yerkhan_WEB_endterm
-- Previous GitHub Pages deployment: https://orlkhn.github.io/Adilzhan_Yerkhan_WEB_endterm/
-- This revised ZIP has not been uploaded or deployed to GitHub by the assistant. Review, commit with both team members, and test live photos after deployment; do not make commits past the instructor's deadline.
-- The project is front-end only. Night Pass uses **demonstration** credentials stored in the visitor's own browser; never enter a real password.
+- Repository: https://github.com/orlkhn/Adilzhan_Yerkhan_WEB_Final
+- Deployed website: https://orlkhn.github.io/Adilzhan_Yerkhan_WEB_Final/
+- NightShift is a static front-end project without server-side sign-in, booking or payments.

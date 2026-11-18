@@ -1050,3 +1050,10 @@
 
 .price-note{display:block;margin:-4px 0 12px;color:var(--muted);font-size:.78rem;line-height:1.4}
 .place-where{display:inline-flex;gap:6px;align-items:center;margin:0 0 12px;font-size:.85rem}
+
+/* Final photo update: Baiterek is the hero photo in BOTH themes.
+   Keep the landmark centered on wide and narrow screens. */
+.hero-art > img.hero-baiterek-photo { object-position: 50% 48%; }
+:root[data-theme="light"] .hero-art > img.hero-baiterek-photo {
+  filter: brightness(1.10) saturate(0.98);
+}

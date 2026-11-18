@@ -470,13 +470,14 @@ textarea:focus-visible {
   pointer-events: none;
 }
 .hero-orbit {
-  width: 105px;
-  height: 105px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
   border-radius: 50%;
-  right: 12%;
-  top: 10%;
+  /* Keep both rings in the empty sky, away from the Baiterek tower. */
+  right: 5.5%;
+  top: 8%;
   animation: orbit 11s linear infinite;
   z-index: 2;
 }
@@ -484,7 +485,7 @@ textarea:focus-visible {
   content: "";
   position: absolute;
   left: -5px;
-  top: 48px;
+  top: 35px;
   background: var(--accent);
   width: 9px;
   height: 9px;
@@ -492,10 +493,11 @@ textarea:focus-visible {
   box-shadow: 0 0 22px var(--accent);
 }
 .orbit-two {
-  width: 140px;
-  height: 140px;
-  top: 7%;
-  right: 8.6%;
+  width: 110px;
+  height: 110px;
+  /* Same visual center as the 80px ring, at all hero widths. */
+  top: calc(8% - 15px);
+  right: calc(5.5% - 15px);
   animation-duration: 15s;
   animation-direction: reverse;
   border-color: color-mix(in srgb, var(--accent) 16%, transparent);
@@ -843,6 +845,11 @@ textarea:focus-visible {
   letter-spacing: 0.14em;
   color: var(--text-2);
   max-width: 120px;
+}
+/* Suggest: point the decorative arrow down toward the suggestion form.
+   The parent badge rotates 10 degrees, so the arrow compensates. */
+.page-hero--suggest .page-hero-decoration .ico {
+  transform: rotate(100deg);
 }
 /* Explore */
 .explore-section {
@@ -1964,3 +1971,31 @@ textarea:focus-visible {
 :root[data-theme="light"] .hero-day-photo { display:block; }
 
 .photo-caption[hidden] {display:none;}
+
+/* Suggest circle alignment */
+.page-hero--suggest .page-hero-decoration {
+  transform: none;
+}
+
+.page-hero--suggest .page-hero-decoration .ico {
+  transform: rotate(135deg);
+}
+
+.page-hero--suggest .page-hero-decoration small {
+  transform: none;
+  text-align: center;
+}
+
+/* Suggest: tilted text and downward arrow */
+body[data-page="suggest"] .page-hero-decoration {
+  transform: rotate(10deg);
+}
+
+body[data-page="suggest"] .page-hero-decoration .ico {
+  transform: rotate(100deg);
+}
+
+/* Suggest: arrow points toward the form */
+body[data-page="suggest"] .page-hero--suggest .page-hero-decoration .ico {
+  transform: rotate(140deg) !important;
+}
